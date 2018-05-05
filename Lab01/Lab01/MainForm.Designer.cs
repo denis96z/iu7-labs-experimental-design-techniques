@@ -245,7 +245,11 @@
             this.Controls.Add(this.gbResults);
             this.Controls.Add(this.gbService);
             this.Controls.Add(this.gbGenerator);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Лабораторная работа №1";
             this.gbGenerator.ResumeLayout(false);
             this.gbGenerator.PerformLayout();
