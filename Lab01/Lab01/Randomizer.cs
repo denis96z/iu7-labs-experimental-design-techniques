@@ -36,6 +36,10 @@ namespace Lab01
 
         public ExpRandomizer(double λ)
         {
+            if (λ <= 0.0)
+            {
+                throw new ArgumentException("Ограничение: λ > 0.");
+            }
             _λ = λ;
             Min = 0.0;
             Avg = Math.Log(2.0) / λ;
@@ -46,6 +50,34 @@ namespace Lab01
         {
             var r = _randomizer.GetRandom();
             return -Math.Log(r) / _λ;
+        }
+
+        public double Min { get; }
+        public double Max { get; }
+        public double Avg { get; }
+    }
+
+    public class RayleighRandomizer : IRandomizer
+    {
+        private readonly double _σ;
+        private readonly IRandomizer _randomizer = new BaseRandomizer();
+
+        public RayleighRandomizer(double σ)
+        {
+            if (σ <= 0.0)
+            {
+                throw new ArgumentException("Ограничение: σ > 0.");
+            }
+            _σ = σ;
+            Min = 0.0;
+            Avg = σ * Math.Sqrt(Math.Log(4.0));
+            Max = 2 * Avg;
+        }
+
+        public double GetRandom()
+        {
+            var r = _randomizer.GetRandom();
+            return Math.Sqrt(-2.0 * Math.Pow(_σ, 2) * Math.Log(1 - r));
         }
 
         public double Min { get; }
