@@ -49,7 +49,7 @@ namespace Lab01
             Disp = 1.0 / Math.Pow(λ, 2);
 
             Min = 0.0;
-            Avg = Math.Log(2) / λ;
+            Avg = Math.Log(2.0) / λ;
             Max = 2 * Avg;
         }
 
@@ -80,14 +80,14 @@ namespace Lab01
             Disp = (2.0 - Math.PI / 2) * Math.Pow(σ, 2);
 
             Min = 0.0;
-            Avg = σ * Math.Sqrt(Math.Log(4));
+            Avg = σ * Math.Sqrt(Math.Log(4.0));
             Max = 2 * Avg;
         }
 
         public double GetRandom()
         {
             var r = _randomizer.GetRandom();
-            return _σ * Math.Sqrt(-2.0 * Math.Log(1 - r));
+            return _σ * Math.Sqrt(-2.0 * Math.Log(1.0 - r));
         }
 
         public double MathExp { get; }
