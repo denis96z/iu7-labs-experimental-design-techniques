@@ -95,7 +95,7 @@ namespace Lab01
         public double GetRandom()
         {
             var r = _randomizer.GetRandom();
-            return Math.Sqrt(-2.0 * Math.Pow(_σ, 2) * Math.Log(1 - r));
+            return _σ * Math.Sqrt(-2.0 * Math.Log(1 - r));
         }
 
         public double MathExp { get; }
