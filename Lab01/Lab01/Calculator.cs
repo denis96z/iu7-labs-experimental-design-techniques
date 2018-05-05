@@ -17,8 +17,8 @@
             var servMaxGenerator = new ConstTimeGenerator(servRandomizer.Max);
 
             var t0 = new Model(reqMinGenerator, servMinGenerator).CountTime(n);
-            var t1 = new Model(reqMinGenerator, servMaxGenerator).CountTime(n);
-            var t2 = new Model(reqMaxGenerator, servMinGenerator).CountTime(n);
+            var t1 = new Model(reqMaxGenerator, servMinGenerator).CountTime(n);
+            var t2 = new Model(reqMinGenerator, servMaxGenerator).CountTime(n);
             var t3 = new Model(reqMaxGenerator, servMaxGenerator).CountTime(n);
 
             var t = new Model(new RandTimeGenerator(reqRandomizer),
