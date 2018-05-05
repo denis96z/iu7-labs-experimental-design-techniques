@@ -41,7 +41,7 @@ namespace Lab01
         private readonly double _λ;
         private readonly IRandomizer _randomizer = new BaseRandomizer();
 
-        private const double MaxCorrectProb = 0.97;
+        private const double MaxErrorProb = 0.1;
 
         public ExpRandomizer(double λ)
         {
@@ -53,7 +53,7 @@ namespace Lab01
             Min = 0.0;
             Avg = Math.Log(2) / λ;
 
-            var k = Math.Sqrt(1.0 / MaxCorrectProb);
+            var k = Math.Sqrt(1.0 / MaxErrorProb);
             Max = Avg + k * Disp;
         }
 
@@ -76,7 +76,7 @@ namespace Lab01
         private readonly double _σ;
         private readonly IRandomizer _randomizer = new BaseRandomizer();
 
-        private const double MaxCorrectProb = 0.97;
+        private const double MaxCorrectProb = 0.01;
 
         public RayleighRandomizer(double σ)
         {
