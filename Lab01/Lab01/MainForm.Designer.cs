@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.gbGenerator = new System.Windows.Forms.GroupBox();
-            this.gbService = new System.Windows.Forms.GroupBox();
-            this.lblGeneratorDistribution = new System.Windows.Forms.Label();
-            this.lblServiceDistribution = new System.Windows.Forms.Label();
-            this.lblσ = new System.Windows.Forms.Label();
-            this.lblλ = new System.Windows.Forms.Label();
-            this.tbσ = new System.Windows.Forms.TextBox();
-            this.tbλ = new System.Windows.Forms.TextBox();
-            this.gbResults = new System.Windows.Forms.GroupBox();
             this.tbN = new System.Windows.Forms.TextBox();
             this.lblN = new System.Windows.Forms.Label();
-            this.lblB0 = new System.Windows.Forms.Label();
-            this.lblB1 = new System.Windows.Forms.Label();
-            this.lblB2 = new System.Windows.Forms.Label();
-            this.lblB3 = new System.Windows.Forms.Label();
-            this.lblT1 = new System.Windows.Forms.Label();
-            this.lblT2 = new System.Windows.Forms.Label();
-            this.lblT = new System.Windows.Forms.Label();
+            this.tbσ = new System.Windows.Forms.TextBox();
+            this.lblσ = new System.Windows.Forms.Label();
+            this.lblGeneratorDistribution = new System.Windows.Forms.Label();
+            this.gbService = new System.Windows.Forms.GroupBox();
+            this.tbλ = new System.Windows.Forms.TextBox();
+            this.lblλ = new System.Windows.Forms.Label();
+            this.lblServiceDistribution = new System.Windows.Forms.Label();
+            this.gbResults = new System.Windows.Forms.GroupBox();
             this.btnCalculate = new System.Windows.Forms.Button();
+            this.lblT = new System.Windows.Forms.Label();
+            this.lblT2 = new System.Windows.Forms.Label();
+            this.lblT1 = new System.Windows.Forms.Label();
+            this.lblB3 = new System.Windows.Forms.Label();
+            this.lblB2 = new System.Windows.Forms.Label();
+            this.lblB1 = new System.Windows.Forms.Label();
+            this.lblB0 = new System.Windows.Forms.Label();
             this.gbGenerator.SuspendLayout();
             this.gbService.SuspendLayout();
             this.gbResults.SuspendLayout();
@@ -66,6 +66,49 @@
             this.gbGenerator.TabStop = false;
             this.gbGenerator.Text = "Параметры генератора:";
             // 
+            // tbN
+            // 
+            this.tbN.Location = new System.Drawing.Point(29, 69);
+            this.tbN.Name = "tbN";
+            this.tbN.Size = new System.Drawing.Size(100, 20);
+            this.tbN.TabIndex = 4;
+            this.tbN.Text = "100";
+            // 
+            // lblN
+            // 
+            this.lblN.AutoSize = true;
+            this.lblN.Location = new System.Drawing.Point(6, 72);
+            this.lblN.Name = "lblN";
+            this.lblN.Size = new System.Drawing.Size(18, 13);
+            this.lblN.TabIndex = 3;
+            this.lblN.Text = "N:";
+            // 
+            // tbσ
+            // 
+            this.tbσ.Location = new System.Drawing.Point(29, 43);
+            this.tbσ.Name = "tbσ";
+            this.tbσ.Size = new System.Drawing.Size(100, 20);
+            this.tbσ.TabIndex = 2;
+            this.tbσ.Text = "0.1";
+            // 
+            // lblσ
+            // 
+            this.lblσ.AutoSize = true;
+            this.lblσ.Location = new System.Drawing.Point(6, 46);
+            this.lblσ.Name = "lblσ";
+            this.lblσ.Size = new System.Drawing.Size(17, 13);
+            this.lblσ.TabIndex = 1;
+            this.lblσ.Text = "σ:";
+            // 
+            // lblGeneratorDistribution
+            // 
+            this.lblGeneratorDistribution.AutoSize = true;
+            this.lblGeneratorDistribution.Location = new System.Drawing.Point(6, 16);
+            this.lblGeneratorDistribution.Name = "lblGeneratorDistribution";
+            this.lblGeneratorDistribution.Size = new System.Drawing.Size(120, 13);
+            this.lblGeneratorDistribution.TabIndex = 0;
+            this.lblGeneratorDistribution.Text = "Распределение Релея";
+            // 
             // gbService
             // 
             this.gbService.Controls.Add(this.tbλ);
@@ -78,32 +121,13 @@
             this.gbService.TabStop = false;
             this.gbService.Text = "Параметры обслуживающего аппарата:";
             // 
-            // lblGeneratorDistribution
+            // tbλ
             // 
-            this.lblGeneratorDistribution.AutoSize = true;
-            this.lblGeneratorDistribution.Location = new System.Drawing.Point(6, 16);
-            this.lblGeneratorDistribution.Name = "lblGeneratorDistribution";
-            this.lblGeneratorDistribution.Size = new System.Drawing.Size(120, 13);
-            this.lblGeneratorDistribution.TabIndex = 0;
-            this.lblGeneratorDistribution.Text = "Распределение Релея";
-            // 
-            // lblServiceDistribution
-            // 
-            this.lblServiceDistribution.AutoSize = true;
-            this.lblServiceDistribution.Location = new System.Drawing.Point(6, 28);
-            this.lblServiceDistribution.Name = "lblServiceDistribution";
-            this.lblServiceDistribution.Size = new System.Drawing.Size(185, 13);
-            this.lblServiceDistribution.TabIndex = 1;
-            this.lblServiceDistribution.Text = "Экспоненциальное распределение";
-            // 
-            // lblσ
-            // 
-            this.lblσ.AutoSize = true;
-            this.lblσ.Location = new System.Drawing.Point(6, 46);
-            this.lblσ.Name = "lblσ";
-            this.lblσ.Size = new System.Drawing.Size(17, 13);
-            this.lblσ.TabIndex = 1;
-            this.lblσ.Text = "σ:";
+            this.tbλ.Location = new System.Drawing.Point(29, 54);
+            this.tbλ.Name = "tbλ";
+            this.tbλ.Size = new System.Drawing.Size(100, 20);
+            this.tbλ.TabIndex = 3;
+            this.tbλ.Text = "0.7";
             // 
             // lblλ
             // 
@@ -114,19 +138,14 @@
             this.lblλ.TabIndex = 2;
             this.lblλ.Text = "λ:";
             // 
-            // tbσ
+            // lblServiceDistribution
             // 
-            this.tbσ.Location = new System.Drawing.Point(29, 43);
-            this.tbσ.Name = "tbσ";
-            this.tbσ.Size = new System.Drawing.Size(100, 20);
-            this.tbσ.TabIndex = 2;
-            // 
-            // tbλ
-            // 
-            this.tbλ.Location = new System.Drawing.Point(29, 54);
-            this.tbλ.Name = "tbλ";
-            this.tbλ.Size = new System.Drawing.Size(100, 20);
-            this.tbλ.TabIndex = 3;
+            this.lblServiceDistribution.AutoSize = true;
+            this.lblServiceDistribution.Location = new System.Drawing.Point(6, 28);
+            this.lblServiceDistribution.Name = "lblServiceDistribution";
+            this.lblServiceDistribution.Size = new System.Drawing.Size(185, 13);
+            this.lblServiceDistribution.TabIndex = 1;
+            this.lblServiceDistribution.Text = "Экспоненциальное распределение";
             // 
             // gbResults
             // 
@@ -145,75 +164,15 @@
             this.gbResults.TabStop = false;
             this.gbResults.Text = "Результаты:";
             // 
-            // tbN
+            // btnCalculate
             // 
-            this.tbN.Location = new System.Drawing.Point(29, 69);
-            this.tbN.Name = "tbN";
-            this.tbN.Size = new System.Drawing.Size(100, 20);
-            this.tbN.TabIndex = 4;
-            // 
-            // lblN
-            // 
-            this.lblN.AutoSize = true;
-            this.lblN.Location = new System.Drawing.Point(6, 72);
-            this.lblN.Name = "lblN";
-            this.lblN.Size = new System.Drawing.Size(18, 13);
-            this.lblN.TabIndex = 3;
-            this.lblN.Text = "N:";
-            // 
-            // lblB0
-            // 
-            this.lblB0.AutoSize = true;
-            this.lblB0.Location = new System.Drawing.Point(6, 16);
-            this.lblB0.Name = "lblB0";
-            this.lblB0.Size = new System.Drawing.Size(22, 13);
-            this.lblB0.TabIndex = 0;
-            this.lblB0.Text = "b0:";
-            // 
-            // lblB1
-            // 
-            this.lblB1.AutoSize = true;
-            this.lblB1.Location = new System.Drawing.Point(6, 29);
-            this.lblB1.Name = "lblB1";
-            this.lblB1.Size = new System.Drawing.Size(22, 13);
-            this.lblB1.TabIndex = 1;
-            this.lblB1.Text = "b1:";
-            // 
-            // lblB2
-            // 
-            this.lblB2.AutoSize = true;
-            this.lblB2.Location = new System.Drawing.Point(6, 42);
-            this.lblB2.Name = "lblB2";
-            this.lblB2.Size = new System.Drawing.Size(22, 13);
-            this.lblB2.TabIndex = 2;
-            this.lblB2.Text = "b2:";
-            // 
-            // lblB3
-            // 
-            this.lblB3.AutoSize = true;
-            this.lblB3.Location = new System.Drawing.Point(6, 55);
-            this.lblB3.Name = "lblB3";
-            this.lblB3.Size = new System.Drawing.Size(22, 13);
-            this.lblB3.TabIndex = 3;
-            this.lblB3.Text = "b3:";
-            // 
-            // lblT1
-            // 
-            this.lblT1.AutoSize = true;
-            this.lblT1.Location = new System.Drawing.Point(6, 95);
-            this.lblT1.Name = "lblT1";
-            this.lblT1.Size = new System.Drawing.Size(19, 13);
-            this.lblT1.TabIndex = 4;
-            this.lblT1.Text = "t1:";
-            // 
-            // lblT2
-            // 
-            this.lblT2.AutoSize = true;
-            this.lblT2.Location = new System.Drawing.Point(6, 108);
-            this.lblT2.Name = "lblT2";
-            this.lblT2.Size = new System.Drawing.Size(19, 13);
-            this.lblT2.TabIndex = 5;
-            this.lblT2.Text = "t2:";
+            this.btnCalculate.Location = new System.Drawing.Point(92, 176);
+            this.btnCalculate.Name = "btnCalculate";
+            this.btnCalculate.Size = new System.Drawing.Size(75, 23);
+            this.btnCalculate.TabIndex = 7;
+            this.btnCalculate.Text = "Вычислить";
+            this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.BtnCalculate_Click);
             // 
             // lblT
             // 
@@ -224,15 +183,59 @@
             this.lblT.TabIndex = 6;
             this.lblT.Text = "t:";
             // 
-            // btnCalculate
+            // lblT2
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(92, 176);
-            this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(75, 23);
-            this.btnCalculate.TabIndex = 7;
-            this.btnCalculate.Text = "Вычислить";
-            this.btnCalculate.UseVisualStyleBackColor = true;
-            this.btnCalculate.Click += new System.EventHandler(this.BtnCalculate_Click);
+            this.lblT2.AutoSize = true;
+            this.lblT2.Location = new System.Drawing.Point(6, 108);
+            this.lblT2.Name = "lblT2";
+            this.lblT2.Size = new System.Drawing.Size(19, 13);
+            this.lblT2.TabIndex = 5;
+            this.lblT2.Text = "t2:";
+            // 
+            // lblT1
+            // 
+            this.lblT1.AutoSize = true;
+            this.lblT1.Location = new System.Drawing.Point(6, 95);
+            this.lblT1.Name = "lblT1";
+            this.lblT1.Size = new System.Drawing.Size(19, 13);
+            this.lblT1.TabIndex = 4;
+            this.lblT1.Text = "t1:";
+            // 
+            // lblB3
+            // 
+            this.lblB3.AutoSize = true;
+            this.lblB3.Location = new System.Drawing.Point(6, 55);
+            this.lblB3.Name = "lblB3";
+            this.lblB3.Size = new System.Drawing.Size(22, 13);
+            this.lblB3.TabIndex = 3;
+            this.lblB3.Text = "b3:";
+            // 
+            // lblB2
+            // 
+            this.lblB2.AutoSize = true;
+            this.lblB2.Location = new System.Drawing.Point(6, 42);
+            this.lblB2.Name = "lblB2";
+            this.lblB2.Size = new System.Drawing.Size(22, 13);
+            this.lblB2.TabIndex = 2;
+            this.lblB2.Text = "b2:";
+            // 
+            // lblB1
+            // 
+            this.lblB1.AutoSize = true;
+            this.lblB1.Location = new System.Drawing.Point(6, 29);
+            this.lblB1.Name = "lblB1";
+            this.lblB1.Size = new System.Drawing.Size(22, 13);
+            this.lblB1.TabIndex = 1;
+            this.lblB1.Text = "b1:";
+            // 
+            // lblB0
+            // 
+            this.lblB0.AutoSize = true;
+            this.lblB0.Location = new System.Drawing.Point(6, 16);
+            this.lblB0.Name = "lblB0";
+            this.lblB0.Size = new System.Drawing.Size(22, 13);
+            this.lblB0.TabIndex = 0;
+            this.lblB0.Text = "b0:";
             // 
             // MainForm
             // 
