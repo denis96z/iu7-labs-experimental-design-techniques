@@ -41,8 +41,6 @@ namespace Lab01
         private readonly double _λ;
         private readonly IRandomizer _randomizer = new BaseRandomizer();
 
-        private const double MaxErrorProb = 0.1;
-
         public ExpRandomizer(double λ)
         {
             _λ = λ > 0.0 ? λ : throw new ArgumentException("Ограничение: λ > 0.");
@@ -52,9 +50,7 @@ namespace Lab01
 
             Min = 0.0;
             Avg = Math.Log(2) / λ;
-
-            var k = Math.Sqrt(1.0 / MaxErrorProb);
-            Max = Avg + k * Disp;
+            Max = 2 * Avg;
         }
 
         public double GetRandom()
@@ -76,8 +72,6 @@ namespace Lab01
         private readonly double _σ;
         private readonly IRandomizer _randomizer = new BaseRandomizer();
 
-        private const double MaxCorrectProb = 0.01;
-
         public RayleighRandomizer(double σ)
         {
             _σ = σ > 0.0 ? σ : throw new ArgumentException("Ограничение: σ > 0.");
@@ -87,9 +81,7 @@ namespace Lab01
 
             Min = 0.0;
             Avg = σ * Math.Sqrt(Math.Log(4));
-
-            var k = Math.Sqrt(1.0 / MaxCorrectProb);
-            Max = Avg + k * Disp;
+            Max = 2 * Avg;
         }
 
         public double GetRandom()
