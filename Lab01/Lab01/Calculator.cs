@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Lab01
+﻿namespace Lab01
 {
     public struct CalculationResults
     {
@@ -14,7 +12,7 @@ namespace Lab01
         public CalculationResults Calculate(IRandomizer reqRandomizer, IRandomizer servRandomizer, int n)
         {
             var reqMinGenerator = new ConstTimeGenerator(reqRandomizer.Min);
-            var reqMaxGenerator = new ConstTimeGenerator(reqRandomizer.Min);
+            var reqMaxGenerator = new ConstTimeGenerator(reqRandomizer.Max);
             var servMinGenerator = new ConstTimeGenerator(servRandomizer.Min);
             var servMaxGenerator = new ConstTimeGenerator(servRandomizer.Max);
 
