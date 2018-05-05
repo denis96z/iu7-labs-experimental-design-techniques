@@ -25,9 +25,9 @@ namespace Lab01
 
     public class ConstTimeGenerator : ITimeGenerator
     {
-        private readonly int _time;
+        private readonly double _time;
 
-        public ConstTimeGenerator(int time)
+        public ConstTimeGenerator(double time)
         {
             _time = time;
         }
