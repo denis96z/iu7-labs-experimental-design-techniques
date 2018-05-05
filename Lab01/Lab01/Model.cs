@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Lab01
 {
@@ -39,6 +40,8 @@ namespace Lab01
 
     public class Model
     {
+        private const double DefaultTimeStep = 0.01;
+
         private readonly ITimeGenerator _reqTimeGenerator;
         private readonly ITimeGenerator _servTimeGenerator;
 
@@ -49,9 +52,33 @@ namespace Lab01
             _servTimeGenerator = serviceTimeGenerator ?? throw new ArgumentNullException();
         }
 
-        public double CountTime(int n)
+        public double CountTime(int n, double dT = DefaultTimeStep)
         {
-            throw new NotImplementedException();
+            var numRequests = 0;
+            var currentTime = 0.0;
+
+            var nextRecvTime = -0.01;
+            var nextServTime = -0.01;
+
+            var queue = new Queue<int>();
+            for (; numRequests < n || queue.Count > 0; currentTime += dT)
+            {
+                // ReSharper disable once InvertIf
+                if (nextRecvTime <= currentTime && numRequests < n)
+                {
+                    queue.Enqueue(numRequests++);
+                    nextRecvTime = currentTime + _reqTimeGenerator.GetNextValue();
+                }
+
+                // ReSharper disable once InvertIf
+                if (nextServTime <= currentTime && queue.Count > 0)
+                {
+                    queue.Dequeue();
+                    nextServTime = currentTime + _servTimeGenerator.GetNextValue();
+                }
+            }
+
+            return currentTime;
         }
     }
 }
