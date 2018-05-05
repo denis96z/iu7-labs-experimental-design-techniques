@@ -232,6 +232,7 @@
             this.btnCalculate.TabIndex = 7;
             this.btnCalculate.Text = "Вычислить";
             this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.BtnCalculate_Click);
             // 
             // MainForm
             // 
